@@ -1,0 +1,22 @@
+What is Emmet?
+-> Emment is a vscode extension that provides us a with shorthand syntactic sugar for doing HTML, XML things.
+Difference between a Library and Framework?
+-> Library is just some lightweight stuff that we can integrate into any of our projects according to our needs.
+Framework is something which already has many capabilities built into it and framework is in control of the things.
+What is CDN? Why do we use it?
+-> CDN stands for content delivery network. We mainly use it to embed certain code segments into our existing codebase.
+Why is React known as React?
+-> Because React was made to "react" to the changes as desired by the users.
+What is crossorigin in script tag?
+-> Crossorigin means that some other source outside the local network can make a request to the local network and have a response from it.
+Basically the other source acts as an origin of request.
+What is diference between React and ReactDOM
+-> React is the Core component of all the "react" stuff.
+ReactDOM on the other hand is a connection between the React and the DOM.
+What is difference between react.development.js and react.production.js files via CDN?
+-> react.development.js is a lightweight version for the react code in production.
+What is async and defer?
+-> In async, the script is fetched from the internet and executed as soon as the fetching is completed. THIS DOES NOT GUARANTEE THE ORDER IN WHICH THE SCRIPTS WILL BE EXECUTED!
+In defer, the scripts are fetched and executed only after the complete html parsing is done, this ensures the regular order in which scripts are executed.
+Suppose that there are multiple scripts that are dependent on one another, in that case we should use defer.
+In a nutshell, when we have independent scripts, we can use async, else defer.
