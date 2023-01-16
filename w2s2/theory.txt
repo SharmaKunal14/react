@@ -1,0 +1,18 @@
+# What is JSX?
+-> It is a syntax extension to the Javascript which makes writing and styling of pages easier.
+
+# Superpowers of JSX.
+-> 1. It helps to easily render both html and javascript in the browser.
+2. It makes sure that the javscript executed on the server is safe.
+3. It performs sanitization before execution.
+
+# Role of type attribute in script tag? What options do we have?
+-> Type attribute defines the type of the script file. Options we have are -
+   1. Attribute (default)
+   2. module
+   3. blocking
+   4. Any other value
+
+# {TitleComponent} -> This is just a way of rendering a react expression.
+{<TitleComponent />} -> This is used to render a react component.
+{<TitleComponent><TitleComponent />} -> This is also same but we can pass children as a prop to the TitleComponent here.
