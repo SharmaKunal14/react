@@ -1,0 +1,13 @@
+# What is the difference between Named export, Default Export and * export?
+-> Named export is used when we have multiple export statments and we identify it by writing it's name in curly braces. We cannot make an alias for named export directly.
+Default export is that export for which we don't need to use Curly braces. We can make an alias for it directly.
+* export is that export which will include all the exports from that particular file and assigned to an alias which we will make use of.
+
+# What is the importance of config.js file?
+-> Any hardcoded data in your project must be placed inside of config.js.
+
+# What are React Hooks?
+-> React hooks are an effective to just hook into the react features. It is an alternate to maintiaing the state using classes. Whenever we want to have some state in our app, we make use of React hook. 
+
+# Why do we need a useState hook?
+-> useState hook provides us with the facility to keep an eye on the state of a variable and rerender the component accordingly whenever the state of the variable changes.
