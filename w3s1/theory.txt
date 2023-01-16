@@ -1,0 +1,32 @@
+# Is JSX madatory for React?
+-> No. It just makes using react easy.
+
+# Is JSX madatory for React?
+-> No. It is just a JavaScript standard that we follow.
+
+# How can I write comments in JSX?
+-> Using //
+
+# What is <React.Fragment></React.Fragment> and <></> ?
+-> React.Fragment is a component which is exported by React. It is like an empty tag. Simply write <> </> 
+
+# What is Virtual DOM?
+-> It is a representation of the actual DOM made by react to render things faster and efficiently. We need it for Reconciliation.
+
+# What is Reconciliation in React?
+-> Reconciliation is an algorithm that react uses to diff between two trees.
+
+# What is React Fiber?
+-> It is just a reconciliation engine that react uses.
+
+# Why we need keys in React? When do we need keys in React?
+-> Keys are neccessary for reconcilition and faster rerendering. We need keys whenever we have multiple same child components inside a parent component.
+
+# Can we use index as keys in React?
+-> Yes, we can use index as keys in React but it is not recommended.
+
+# What is props in React? Ways to pass props.
+-> Props mean nothing but the properties that we pass on to the components to enhance there functionality. We pass props as key value pairs.
+
+# What is a Config Driven UI ?
+-> Config driven UI is a concept wherein the info to which components do we need to render is sent by the backend services and we display the content accordingly.
