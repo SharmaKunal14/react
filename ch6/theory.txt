@@ -1,0 +1,33 @@
+# What is a Microservice?
+->  A microservice is a standalone project on it's own that we can make use of to integrate more features into the app.
+
+# What is  Monolith architecture?
+-> Monolith architecture means that all the services that are provided by the app are present inside a single project unlike microservices where we have different projects for different services.
+
+# What is the difference between Monolith and Microservice?
+-> In monolith, we have all the services under one single project whereas in microservices, we have all the services segregated into differnt deployable projects.
+
+# Why do we need a useEffect Hook?
+-> useEffect hook gives us the ability to make api calls efficiently and control the actions that happen on the changes of the depenedency array.
+
+# What is Optional Chaining?
+-> Optional chaining checks for the objects properties and if it's null or undefined, it returns undefined rather than throwing an exception.
+
+# What is Shimmer UI?
+-> Shimmer UI is a psycological trick wherein the UI doesn't change abruptly. Instead, some boxes or anything of certain shape/size relevant to the content are shown until the data is loaded completely into the web page.
+
+# What is the difference between JS expression and JS statement?
+-> Expression produces a value whereas statements don't.
+
+# What is Conditional Rendering? Explain with a code example.
+-> Conditional rendering means to render a component based on the evaluation of certain conditions. For example -
+{isLoggedIn? (<button>Logout</button>) : (<button>Login</button>)}
+
+# What is CORS?
+-> CORS stands for Cross Origin Resource Sharing. It means that only certain servers are authorized as valid origins to access the other server/api. It is a security measure to prevent malicious attacks from unknown origins.
+
+# What is async and await? 
+-> async await is nothing but a syntactic sugar used to handle promises elegantly. It just gives us the feel of asynchronous operations operating synchronously.
+
+# What is the use of `const json = await data.json();` in  getRestaurants()?
+-> .json function is used to make valid JSON object from the api response and returns a promise.

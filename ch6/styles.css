@@ -1,0 +1,62 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.img__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	width: 50px;
+	height: 50px;
+}
+.header {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav__list {
+	width: 270px;
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+	justify-content: space-between;
+}
+.nav__list > li {
+	display: inline-block;
+}
+.card {
+	margin-left: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #333;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	row-gap: 10px;
+}
+.card__img {
+	height: 60px;
+	width: 60px;
+}
+.restaurant-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.search_container {
+	display: flex;
+	padding: 20px;
+	gap: 10px;
+}
+
+.btn {
+	background-color: #fff;
+	border: 1px solid #444;
+	padding: 5px;
+}
