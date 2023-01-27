@@ -1,0 +1,26 @@
+# How do you create Nested Routes react-router-dom cofiguration?
+-> To create nested routes, we mention the property children and then define all the routes in there. CAUTION - DON'T USE / in nested routes, just write the name of the nested route else the browser will take that route as the root route not the child route.
+
+# Read abt createHashRouter, createMemoryRouter from React Router docs.
+-> Memory Router - By using this, the route name change is not visible in the URL. Instead  it stores the url in the memeory and therefore the user can't use the forward and button button to navigate.
+Hash Router - In this, the hash portion of the url is used to keep UI in sync. It uses client side hash routing. The hash portion of the url won't be handled by the server. The server will always send index.html. Hash values will be taken care of by the react router. It is mostly used to support legacy browser versions.
+
+# What is the order of life cycle method calls in Class Based Components?
+-> There are two phases ->
+1. Render Phase - In this, the constructor and then the render is called. If we have multiple children, then it proceeds in batch.
+2. Commit Phase -> In this, the actual changes in the DOM are made and the lifecycle methods like componentDidMount, componentDidUpdate, componentWillUnmount are called.
+
+So the order is => Constructor -> Render -> Change DOM -> componentDidMount / componentDidUpdate / componentWillUnmount.
+
+# Why do we use componentDidMount?
+-> componentDidMount is called in the commit phase so that means that it is called after rendering is done, therefore we can make api calls in this lifecycle method.
+
+# Why do we use componentWillUnmount? Show with example.
+-> componentWillUnmount is used to do the cleaning when we change the page. It can be like clearing any timeout, interval or any other cleanup requirement. Example is being made in this chapter under About.js.
+
+# (Research) Why do we use super(props) in constructor?
+-> super(props) is used to get access to this.props from the parent constructor. super is just used to refer to the parent class constructor. Here the parent class in class based component is the Component class.
+
+# (Research) Why can't we have the callback function of useEffect async?
+-> The way useEffect works is that that is expects a cleanup function as the return value from the callback function simply because of the cleanup purposes when we navigate to different pages in the app. 
+If we make the useEffect callback async, then the cleanup function (if returned) will never be called, because the async itself implicitly returns a promise. That means that the cleanup function will never get called, thereby defeating the purpose of the useEffect hook.
