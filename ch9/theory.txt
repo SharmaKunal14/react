@@ -1,0 +1,16 @@
+# What are various ways to add images into our App? Explain with code examples?
+-> 1. Use an image URL. eg => <img src="https://imageUrl.com/" />
+2. Store it locally and import it as an alias. eg => import Logo from './src/assets/img/logo.png', <img src={Logo} />
+
+# What would happen if we do console.log(useState())?
+-> It will log an array whose first element is an undefined state and the second element is an empty function.
+
+# How will useEffect behave if we don't add a dependency array ?
+-> Then the useEffect hook will be executed at first and then all subsequent re-renders.
+
+# What is SPA?
+-> SPA stands for Single Page Application. It's main advantage is that that we don't refresh the page to load the content, instead we get all the pages bundled together initially that enhances the performance of our application. It doesn't make network calls time and again to the server to load the content.
+
+# What is difference between Client Side Routing and Server Side Routing?
+-> In client side routing, a different component is loaded each time it is required without calling the network as we have all the code bundled at the client side. 
+In Server side routing, all the web pages come from the server.
