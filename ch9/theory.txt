@@ -1,16 +1,16 @@
-# What are various ways to add images into our App? Explain with code examples?
--> 1. Use an image URL. eg => <img src="https://imageUrl.com/" />
-2. Store it locally and import it as an alias. eg => import Logo from './src/assets/img/logo.png', <img src={Logo} />
+# When and why do we need lazy()?
+-> lazy() is used when we need to spilt our code into multiple bundles so that the app isn't too heavy to be loaded by the browser.
+Lazy does chunking/lazy loading of different components in our app i.e. they are shipped on the fly when there is a request for them rather than being bundled altogether in a single bundle.
 
-# What would happen if we do console.log(useState())?
--> It will log an array whose first element is an undefined state and the second element is an empty function.
+# What is suspense?
+-> Suspense is an indication by react that the component is being lazily loaded thereby it prevents app crashes that might occur when the component is still being lazily loaded but react tries to render it.
 
-# How will useEffect behave if we don't add a dependency array ?
--> Then the useEffect hook will be executed at first and then all subsequent re-renders.
+# Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+-> This means that the react suspended the render because it couldn't find the component. It is because of lazy loading. Suspense delays the rendering of the component and puts it in waiting state till the component loads.
 
-# What is SPA?
--> SPA stands for Single Page Application. It's main advantage is that that we don't refresh the page to load the content, instead we get all the pages bundled together initially that enhances the performance of our application. It doesn't make network calls time and again to the server to load the content.
+# Advantages and disadvantages of using this code splitting pattern?
+-> Advantage - It decreases the bundle size and decreases the load time of the app.
+Disadvantage - It can be used on the client side only.
 
-# What is difference between Client Side Routing and Server Side Routing?
--> In client side routing, a different component is loaded each time it is required without calling the network as we have all the code bundled at the client side. 
-In Server side routing, all the web pages come from the server.
+# When do we and why do we need suspense?
+-> We need to use suspense whenever we do lazy loading. During lazy loading, react might suspend the rendering because the component might still be loading. There suspense comes to the rescue.
