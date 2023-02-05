@@ -1,0 +1,159 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.img__container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.logo {
+	width: 50px;
+	height: 50px;
+}
+.header {
+	padding: 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav__list {
+	width: 270px;
+	display: flex;
+	text-decoration: none;
+	list-style: none;
+	justify-content: space-between;
+}
+.nav__list > li {
+	display: inline-block;
+}
+.card {
+	margin-left: 5px;
+	margin-bottom: 10px;
+	border: 1px solid #333;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	column-gap: 10px;
+	row-gap: 10px;
+}
+.card__img {
+	height: 60px;
+	width: 60px;
+}
+.restaurant-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.search_container {
+	display: flex;
+	padding: 20px;
+	gap: 10px;
+}
+
+.btn {
+	background-color: #fff;
+	border: 1px solid #444;
+	padding: 5px;
+	cursor: pointer;
+	width: 50px;
+}
+.shimmer-card {
+	background-color: lightgray;
+	border: 1px solid lightgrey;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	width: 150px;
+	height: 150px;
+}
+a:link,
+a:visited {
+	text-decoration: none;
+	color: rgba(255, 111, 0, 0.961);
+}
+
+a:hover {
+	color: rgba(255, 111, 0, 0.505);
+}
+.restaurant-image-container {
+	margin-left: 20px;
+}
+.restaurant-image-container > img {
+	height: 160px;
+	width: 160px;
+}
+
+.restaurant-detail {
+	display: flex;
+	gap: 60px;
+}
+.restaurant-menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.restaurant-menu-card {
+	width: 200px;
+	height: 200px;
+	margin-bottom: 10px;
+	border: 1px solid rgba(168, 225, 237, 0.533);
+	padding: 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.restaurant-card__image {
+	width: 50px;
+	height: 50px;
+}
+.is-veg {
+	width: 20px;
+}
+
+.restaurant-card__name {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.form-login {
+	margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+.form__first-name,
+.form__last-name,
+.form__password,
+.form__confirm-password,
+.form__email {
+	display: flex;
+	gap: 15px;
+}
+
+.form__btn {
+	width: 100px;
+}
+.error {
+	font-size: 10px;
+	color: red;
+}
+
+.foodstamart__section > section {
+	padding: 20px;
+	margin-bottom: 5px;
+}
+
+.foodstamart__section {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+}

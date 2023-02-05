@@ -1,0 +1,16 @@
+# When and why do we need lazy()?
+-> lazy() is used when we need to spilt our code into multiple bundles so that the app isn't too heavy to be loaded by the browser.
+Lazy does chunking/lazy loading of different components in our app i.e. they are shipped on the fly when there is a request for them rather than being bundled altogether in a single bundle.
+
+# What is suspense?
+-> Suspense is an indication by react that the component is being lazily loaded thereby it prevents app crashes that might occur when the component is still being lazily loaded but react tries to render it.
+
+# Why we got this error : A component suspended while responding to synchronous input. This will cause the UI to be replaced with a loading indicator. To fix, updates that suspend should be wrapped with startTransition? How does suspense fix this error?
+-> This means that the react suspended the render because it couldn't find the component. It is because of lazy loading. Suspense delays the rendering of the component and puts it in waiting state till the component loads.
+
+# Advantages and disadvantages of using this code splitting pattern?
+-> Advantage - It decreases the bundle size and decreases the load time of the app.
+Disadvantage - It can be used on the client side only.
+
+# When do we and why do we need suspense?
+-> We need to use suspense whenever we do lazy loading. During lazy loading, react might suspend the rendering because the component might still be loading. There suspense comes to the rescue.
