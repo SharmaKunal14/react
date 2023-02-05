@@ -1,3 +1,5 @@
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import { IMG_CDN } from "../config";
 import VegImage from "../assets/img/veg.png";
 import NonVegImage from "../assets/img/non-veg.png";
@@ -12,10 +14,11 @@ const RestaurantMenuCard = ({
 }) => {
 	return (
 		<div className="restaurant-menu-card">
-			<img
+			<LazyLoadImage
 				src={`${IMG_CDN}/${cloudinaryImageId}`}
 				alt={name}
 				className="restaurant-card__image"
+				effect="blur"
 			/>
 			<h3 className="restaurant-card__name">
 				{name}{" "}

@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN } from "../config";
 import Shimmer from "./Shimmer";
-import RestaurantMenuCard from "./RestaurantMenuCard";
 import useRestaurant from "../utils/useRestaurant";
+const RestaurantMenuCard = lazy(() => import("./RestaurantMenuCard"));
+
 const RestaurantDetail = () => {
 	const { resId } = useParams();
 
