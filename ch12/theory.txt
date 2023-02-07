@@ -1,0 +1,12 @@
+# What is prop drilling?
+-> It means to pass down props from parent to a child (child which is very deep in hierarchy)
+
+# What is lifting the state up?
+-> It means that the taking the control from the children to the parent.
+
+# What is Context Provider and Context Consumer?
+-> Context Provider is used to update the value of the context.
+Context Consumer is used to consume the values from the context.
+
+# If you don’t pass a value to the provider does it take the default value?
+-> Yes, it is undefined.
