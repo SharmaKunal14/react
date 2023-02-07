@@ -2,7 +2,8 @@ import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 import FoodItemCard from "./FoodItemCard";
 
-const RestaurantMenuCard = ({ item }) => {
+const RestaurantMenuCard = ({ item, restaurantName }) => {
+	item.restaurantName = restaurantName;
 	const dispatch = useDispatch();
 	const addFoodItem = (item) => {
 		dispatch(addItem(item));

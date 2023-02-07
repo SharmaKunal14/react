@@ -1,11 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import FoodItemCard from "./FoodItemCard";
-import { removeItem, clearCart } from "../utils/cartSlice";
+import { removeItem, clearCart, addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 const Cart = () => {
 	const cartItems = useSelector((store) => store.cart.items);
 	const dispatch = useDispatch();
+	const addFoodItem = (item) => {
+		dispatch(addItem(item));
+	};
 	const removeFoodItem = (item) => {
 		dispatch(removeItem(item));
 	};
@@ -25,6 +28,7 @@ const Cart = () => {
 						key={cartItem.id}
 						cart={true}
 						removeFoodItem={removeFoodItem}
+						addFoodItem={addFoodItem}
 					/>
 				))}
 			</div>

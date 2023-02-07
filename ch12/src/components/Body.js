@@ -22,8 +22,8 @@ const Body = () => {
 		const json = await resp.json();
 		// console.log(json.data.cards[2].data.data.cards);
 		// Optional chaining is must
-		setAllRestaurants(json?.data?.cards[1]?.data?.data?.cards);
-		setFilteredRestaurants(json?.data?.cards[1]?.data?.data?.cards);
+		setAllRestaurants(json?.data?.cards[0]?.data?.data?.cards);
+		setFilteredRestaurants(json?.data?.cards[0]?.data?.data?.cards);
 	};
 
 	if (!allRestaurants) return null;

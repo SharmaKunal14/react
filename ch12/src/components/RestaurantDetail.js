@@ -9,7 +9,6 @@ const RestaurantDetail = () => {
 	const { resId } = useParams();
 
 	const restaurantDetail = useRestaurant(resId);
-
 	return !restaurantDetail ? (
 		<Shimmer />
 	) : (
@@ -25,7 +24,11 @@ const RestaurantDetail = () => {
 			<div className="restaurant-menu">
 				{Object.entries(restaurantDetail?.data?.menu?.items).map(
 					(e) => (
-						<RestaurantMenuCard key={e[1].id} item={e[1]} />
+						<RestaurantMenuCard
+							key={e[1].id}
+							item={e[1]}
+							restaurantName={restaurantDetail?.data?.name}
+						/>
 					)
 				)}
 			</div>

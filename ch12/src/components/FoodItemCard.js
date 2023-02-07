@@ -4,7 +4,15 @@ import { IMG_CDN } from "../config";
 import VegImage from "../assets/img/veg.png";
 import NonVegImage from "../assets/img/non-veg.png";
 const FoodItemCard = ({ item, cart, addFoodItem, removeFoodItem }) => {
-	const { name, category, description, price, cloudinaryImageId, isVeg } = {
+	const {
+		name,
+		category,
+		description,
+		price,
+		cloudinaryImageId,
+		isVeg,
+		restaurantName,
+	} = {
 		...item,
 	};
 	return (
@@ -15,6 +23,7 @@ const FoodItemCard = ({ item, cart, addFoodItem, removeFoodItem }) => {
 				className="restaurant-card__image"
 				effect="blur"
 			/>
+			{cart ? <em>{restaurantName}</em> : <></>}
 			<h3 className="restaurant-card__name">
 				{name}{" "}
 				{isVeg ? (
@@ -46,13 +55,22 @@ const FoodItemCard = ({ item, cart, addFoodItem, removeFoodItem }) => {
 					</button>
 				</div>
 			) : (
-				<div className="restaurant-card__delete-section">
-					<button
-						className="btn btn__red"
-						onClick={() => removeFoodItem(item)}
-					>
-						Delete Item
-					</button>
+				<div className="restaurant-card__count-section">
+					<div className="item-counter">
+						<button
+							className="btn btn__green"
+							onClick={() => addFoodItem(item)}
+						>
+							+
+						</button>
+						<p className="item-counter__count">{item.count}</p>
+						<button
+							className="btn btn__red"
+							onClick={() => removeFoodItem(item)}
+						>
+							-
+						</button>
+					</div>
 				</div>
 			)}
 		</div>
