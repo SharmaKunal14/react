@@ -1,12 +1,25 @@
-# What is prop drilling?
--> It means to pass down props from parent to a child (child which is very deep in hierarchy)
+# useContext vs Redux.
+-> useContext is a global state management tool developed by the React which is beneficial while developing small scale applications.
+Redux is a global state management javascript library but it is mainly used in large scale applications. It is based on three main things -> Actions, Dispatcher and Reducer.
 
-# What is lifting the state up?
--> It means that the taking the control from the children to the parent.
+# Advantage of using Redux Toolkit over Redux.
+-> Redux Toolkit is easier to setup over Redux thus it speeds up the development process
 
-# What is Context Provider and Context Consumer?
--> Context Provider is used to update the value of the context.
-Context Consumer is used to consume the values from the context.
+# Explain Dispatcher.
+-> Dispatcher is something that dispatches a particular action that leads to a change in state of the application. It
 
-# If you don’t pass a value to the provider does it take the default value?
--> Yes, it is undefined.
+# Explain Reducer.
+-> Reducer is nothing but a normal javascript function that modifies the state of our app on the commencement of an action as dispatched by the dispatcher.
+
+# Explain slice.
+-> Slice is just a piece the whole redux object which acts as a logical seperator for our whole store.
+
+# Explain selector.
+-> At the end of the day, Selector is just a hook and a hook is a normal javascript function. It is used to basically access the whole store/slice.
+
+# Explain createSlice and the configuration it takes.
+-> createSlice takes in => 
+1. name - the name of the slice.
+2. initialState - the initial state of the slice.
+3. reducers - the functions that will modify this particular slice of the state.
+It returns an object on which we have <returnedObject>.actions, which includes all the actions that we have defined, along with <returnedObject>.reducer, that contains all the reducers as we have defined in the reducers property of the createSlice.
