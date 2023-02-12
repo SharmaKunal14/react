@@ -11,7 +11,12 @@ const Header = ({ title }) => {
 	return (
 		<header className="header">
 			<div className="img__container">
-				<img src={Logo} alt="Food logo" className="logo" />
+				<img
+					src={Logo}
+					alt="Food logo"
+					className="logo"
+					data-testid="logo"
+				/>
 				<Title title={title} />
 			</div>
 			<nav>
@@ -23,7 +28,7 @@ const Header = ({ title }) => {
 						<li>About</li>
 					</Link>
 					<Link to="/cart">
-						<li>Cart - {cartItems.length}</li>
+						<li data-testid="cart">Cart - {cartItems.length}</li>
 					</Link>
 					<Link to="/foodstamart">
 						<li>Foodstamart</li>

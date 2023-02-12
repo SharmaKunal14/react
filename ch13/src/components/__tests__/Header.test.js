@@ -12,5 +12,17 @@ test("Check header and logo have been loaded", () => {
 			</Provider>
 		</StaticRouter>
 	);
-	console.log(header);
+	const logo = header.getAllByTestId("logo");
+	expect(logo[0].src).toBe("http://localhost/dummy.png");
+});
+test("Cart should have zero items", () => {
+	const header = render(
+		<StaticRouter>
+			<Provider store={store}>
+				<Header />
+			</Provider>
+		</StaticRouter>
+	);
+	const cart = header.getByTestId("cart");
+	expect(cart.innerHTML).toBe("Cart - 0");
 });

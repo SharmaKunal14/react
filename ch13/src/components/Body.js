@@ -10,7 +10,7 @@ const Body = () => {
 	const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 	const isOnline = useOnline();
 	if (!isOnline) {
-		return <h1>You are offline</h1>;
+		return <h1 data-testid="online-status">You are offline</h1>;
 	}
 	useEffect(() => {
 		getRestaurants();
@@ -37,8 +37,10 @@ const Body = () => {
 					value={search}
 					onChange={(e) => setSearch(e.target.value)}
 					placeholder="Search"
+					data-testid="search-input"
 				/>
 				<button
+					data-testid="search-btn"
 					onClick={() => {
 						const data = filterData(search, allRestaurants);
 						setFilteredRestaurants(data);
@@ -47,7 +49,7 @@ const Body = () => {
 					Search
 				</button>
 			</div>
-			<div className="restaurant-list">
+			<div className="restaurant-list" data-testid="res-list">
 				{filteredRestaurants.length === 0 ? (
 					<h1>No restaurants found</h1>
 				) : (
