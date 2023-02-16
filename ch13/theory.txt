@@ -1,25 +1,12 @@
-# useContext vs Redux.
--> useContext is a global state management tool developed by the React which is beneficial while developing small scale applications.
-Redux is a global state management javascript library but it is mainly used in large scale applications. It is based on three main things -> Actions, Dispatcher and Reducer.
+# What are different types for testing?
+-> There are two types of testing - Manual and Automated testing. These include Unin test, Integration Test, Smoke testing, Performance testing etc.
 
-# Advantage of using Redux Toolkit over Redux.
--> Redux Toolkit is easier to setup over Redux thus it speeds up the development process
+# What is Enzyme?
+-> Enzyme is a JavaScript Testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. It was developed at Airbnb and later transferred to an independent organization.
 
-# Explain Dispatcher.
--> Dispatcher is something that dispatches a particular action that leads to a change in state of the application. It
+# Enzyme vs React Testing Library?
+->  If you want mimic real-world user interactions, the React Testing Library is the way to go because you can do the same with fireEvent functions.
+Meanwhile, Enzyme is better suited to situations where you have to match the state of React or some other function with state.
 
-# Explain Reducer.
--> Reducer is nothing but a normal javascript function that modifies the state of our app on the commencement of an action as dispatched by the dispatcher.
-
-# Explain slice.
--> Slice is just a piece the whole redux object which acts as a logical seperator for our whole store.
-
-# Explain selector.
--> At the end of the day, Selector is just a hook and a hook is a normal javascript function. It is used to basically access the whole store/slice.
-
-# Explain createSlice and the configuration it takes.
--> createSlice takes in => 
-1. name - the name of the slice.
-2. initialState - the initial state of the slice.
-3. reducers - the functions that will modify this particular slice of the state.
-It returns an object on which we have <returnedObject>.actions, which includes all the actions that we have defined, along with <returnedObject>.reducer, that contains all the reducers as we have defined in the reducers property of the createSlice.
+# What is Jest and why do we use it?
+-> Jest is a JavaScript testing framework designed to ensure correctness of any JavaScript codebase. It allows you to write tests with an approachable, familiar and feature-rich API that gives you results quickly. Jest is well-documented, requires little configuration and can be extended to match your requirements.
