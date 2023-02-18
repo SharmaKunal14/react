@@ -17,7 +17,7 @@ const VideoCard = ({ info }) => {
 	} = snippet;
 	const { commentCount, likeCount, viewCount } = statistics;
 	const { height, width, url } = thumbnails.medium;
-	let views, viewsLetter, videoDuration;
+	let views, viewsLetter, videoDuration, daysElapsed, daysElapsedWord;
 	const convertViewsToReadableFormat = (v) => {
 		const digits = v.length;
 		if (digits > 6) {
@@ -48,8 +48,43 @@ const VideoCard = ({ info }) => {
 			videoDuration = `0:${seconds}`;
 		}
 	};
+	const getDaysElapsed = (date) => {
+		const one_day = 1000 * 60 * 60 * 24;
+		const currDate = new Date(date);
+		const diff = new Date() - currDate;
+		daysElapsed = Math.round(diff / one_day);
+		if (daysElapsed >= 365) {
+			daysElapsed = daysElapsed / (30 * 12);
+			if (daysElapsed > 1) {
+				daysElapsedWord = "years";
+			} else {
+				daysElapsedWord = "year";
+			}
+		} else if (daysElapsed >= 30) {
+			daysElapsed = daysElapsed / 30;
+			if (daysElapsed > 1) {
+				daysElapsedWord = "months";
+			} else {
+				daysElapsedWord = "month";
+			}
+		} else if (daysElapsed >= 7) {
+			daysElapsed = daysElapsed / 7;
+			if (daysElapsed > 1) {
+				daysElapsedWord = "weeks";
+			} else {
+				daysElapsedWord = "week";
+			}
+		} else {
+			if (daysElapsed > 1) {
+				daysElapsedWord = "days";
+			} else {
+				daysElapsedWord = "day";
+			}
+		}
+	};
 	convertViewsToReadableFormat(viewCount);
 	convertDurationToReadableFormat(duration);
+	getDaysElapsed(publishedAt);
 	return (
 		<div className="flex flex-col gap-3">
 			<div className="relative">
@@ -77,7 +112,11 @@ const VideoCard = ({ info }) => {
 						<p className="truncate">
 							{channelTitle} {licensedContent ? "✔️" : ""}
 						</p>
-						<p>{`${views}${viewsLetter} views`}</p>
+						<p>
+							{`${views}${viewsLetter} views`}
+							{" • "}
+							{`${daysElapsed} ${daysElapsedWord}`}
+						</p>
 					</div>
 				</div>
 			</div>
