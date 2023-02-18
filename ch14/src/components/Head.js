@@ -1,29 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_SUGGESTIONS } from "../utils/constants";
+import { cacheResults } from "../utils/searchSlice";
 const Head = () => {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [suggestions, setSuggestions] = useState([]);
 	const [showSuggestions, setShowSuggestions] = useState(false);
-
+	const dispatch = useDispatch();
+	const searchCache = useSelector((store) => store.search);
 	useEffect(() => {
-		const timer = setTimeout(() => getSearchSuggestions(searchQuery), 200);
+		const timer = setTimeout(() => {
+			if (searchCache[searchQuery]) {
+				setSuggestions(searchCache[searchQuery]);
+			} else {
+				getSearchSuggestions(searchQuery);
+			}
+		}, 200);
 
 		return () => clearTimeout(timer);
 	}, [searchQuery]);
-
+	const handleToggleEvent = () => {
+		dispatch(toggleMenu());
+	};
 	const getSearchSuggestions = async (searchQuery) => {
 		const suggestions = await fetch(
 			YOUTUBE_SEARCH_SUGGESTIONS + searchQuery
 		);
 		const [query, resp] = await suggestions.json();
 		setSuggestions(resp);
+		dispatch(cacheResults({ [searchQuery]: resp }));
 	};
-	const dispatch = useDispatch();
-	const handleToggleEvent = () => {
-		dispatch(toggleMenu());
-	};
+
 	return (
 		<div className="grid grid-flow-col p-5 shadow-lg">
 			<div className="flex col-span-1">
