@@ -33,17 +33,37 @@ const VideoCard = ({ info }) => {
 		}
 	};
 	const convertDurationToReadableFormat = (duration) => {
-		if (duration.search("M") !== -1) {
+		if (duration.search("H") !== -1) {
+			let [hours, rest] = duration.slice(2).split("H");
+			let [minutes, seconds] = rest.split("M");
+			seconds = seconds.slice(0, seconds.length - 1);
+			if (seconds < 10) {
+				if (seconds === 0) {
+					seconds = "00";
+				} else {
+					seconds = "0" + seconds;
+				}
+			}
+			videoDuration = `${hours}:${minutes}:${seconds}`;
+		} else if (duration.search("M") !== -1) {
 			let [minutes, seconds] = duration.slice(2).split("M");
 			seconds = seconds.slice(0, seconds.length - 1);
 			if (seconds < 10) {
-				seconds = "0" + seconds;
+				if (seconds == 0) {
+					seconds = "00";
+				} else {
+					seconds = "0" + seconds;
+				}
 			}
 			videoDuration = `${minutes}:${seconds}`;
 		} else {
 			let seconds = duration.slice(2, duration.length - 1);
 			if (seconds < 10) {
-				seconds = "0" + seconds;
+				if (seconds === 0) {
+					seconds = "00";
+				} else {
+					seconds = "0" + seconds;
+				}
 			}
 			videoDuration = `0:${seconds}`;
 		}
